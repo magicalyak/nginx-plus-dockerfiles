@@ -14,15 +14,15 @@ variables:
   # DOCKER_HOST: tcp://localhost:2375
   #
   # For non-Kubernetes executors, we use tcp://docker:2375
-  DOCKER_HOST: tcp://docker:2375
+  #DOCKER_HOST: tcp://docker:2375
   #
   # This will instruct Docker not to start over TLS.
-  DOCKER_TLS_CERTDIR: ""
+  #DOCKER_TLS_CERTDIR: ""
   
 services:
   - name:  docker:19.03.1-dind
     alias: docker
-    entrypoint: ["/bin/sh","-c" ,'echo "10.1.1.5 registry.gitlab.f5demolab.com">>/etc/hosts && dockerd-entrypoint.sh']
+#    entrypoint: ["/bin/sh","-c" ,'echo "10.1.1.5 registry.gitlab.f5demolab.com">>/etc/hosts && dockerd-entrypoint.sh']
 
 before_script:
   - docker info
