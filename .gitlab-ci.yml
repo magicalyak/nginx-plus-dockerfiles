@@ -20,9 +20,7 @@ variables:
   DOCKER_TLS_CERTDIR: ""
   
 services:
-  - name: docker:19.03.1-dind
-    entrypoint: ["dockerd-entrypoint.sh"]
-    command: ["--insecure-registry", "https://registry.gitlab.f5demolab.com"]
+  - docker:19.03.1-dind
 
 before_script:
   - docker info
