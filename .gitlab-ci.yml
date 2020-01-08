@@ -25,7 +25,7 @@ variables:
 services:
   - name:  docker:19.03.1-dind
     alias: docker
-    entrypoint: ["/bin/sh","-c" ,'echo "10.1.1.5 registry.gitlab.f5demolab.com">>/etc/hosts && dockerd-entrypoint.sh']
+    entrypoint: ["/bin/sh","-c" ,'echo "10.1.1.5 registry.gitlab.f5demolab.com gitlab.f5demolab.com">>/etc/hosts && dockerd-entrypoint.sh']
 
 before_script:
   - docker info
