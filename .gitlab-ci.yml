@@ -48,6 +48,7 @@ alpine3.9: # CI_JOB_NAME
     - cp /etc/ssl/nginx/nginx-repo.* etc/ssl/nginx/
     - cp -R etc/ Dockerfiles/$CI_JOB_NAME/
     - docker build -t $NAME Dockerfiles/$CI_JOB_NAME
+    - ls -la
     - chmod +x ./ci-build.sh
     - ./ci-build.sh $NAME # Script to `docker run` with random ports
     - docker tag $NAME ${CI_REGISTRY}/${CI_PROJECT_PATH}:$TAG
